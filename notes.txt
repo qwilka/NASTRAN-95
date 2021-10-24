@@ -1,0 +1,29 @@
+
+https://github.com/nasa/NASTRAN-95
+https://github.com/AeroDME/NASTRAN-95
+https://github.com/ldallolio/NASTRAN-95
+
+https://www.mystran.com/forums/forumdisplay.php?fid=11  ComLab and NASTRAN-95
+https://discord.com/invite/NeZEBZn
+
+build notes:
+
+https://github.com/AeroDME/NASTRAN-95/commit/07d552d5c293f79d662042198aefccf6ebd91a14
+
+https://www.baeldung.com/linux/find-convert-files-with-crlf
+
+
+
+
+
+remove CR
+============
+mkdir -p /tmp/test_folder
+printf "Hii \r\n" | tee /tmp/test_folder/crlf_ending{1,2}
+printf "HIIII ii \n" | tee /tmp/test_folder/lf_ending{1,2}
+cat -A /tmp/test_folder/{crlf_ending1,lf_ending1}
+grep -rIl -m 1 $'\r' /tmp/test_folder/
+
+sed 's/\r//' /tmp/test_folder/crlf_ending1 | cat -A -
+tr -d '\r' < /tmp/test_folder/crlf_ending1 | cat -A -
+awk 'gsub(/\r/,"")' /tmp/test_folder/crlf_ending1 | cat -A -
