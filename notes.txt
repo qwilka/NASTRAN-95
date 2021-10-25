@@ -10,7 +10,23 @@ https://gcc.gnu.org/gcc-9/
 https://gcc.gnu.org/wiki/GFortran
 
 build notes:
-fix files with CRLF line endings
+remove CR: fix files with CRLF line endings
+
+Changes required to get NASTRAN-95 to compile.
+https://github.com/AeroDME/NASTRAN-95/commit/07d552d5c293f79d662042198aefccf6ebd91a14
+mds/cputim.f
+mds/dbmdia.f   TODO remove the HOLLERITH
+mds/nastim.f
+mis/endsys.f
+mis/pexit.f
+mis/smc2cd.f   remove  on last line of file
+mis/smc2cs.f   remove  on last line of file
+mis/smc2rd.f   remove  on last line of file
+mis/smc2rs.f   remove  on last line of file
+mis/sofut.f
+mis/trd1e.f   remove  on last line of file
+
+mds/PAKBLK.COM    remove  on last line of file
 
 
 

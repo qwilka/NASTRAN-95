@@ -77,7 +77,11 @@ C     THAN PREVIOUS CPUTIME CALL. OTHERWISE, CALLING ROUTINE MAY GET
 C     INTO TROUBLE, SUCH AS DIVIDED BY ZERO.        
 C        
       REAL ARRAY(2)        
-      CALL ETIME(ARRAY)
+CDME  https://github.com/AeroDME/NASTRAN-95/blob/master/mds/cputim.f
+CDME  Changed to conform to GFORTRAN implementation of ETIME subroutine.
+      REAL TIME
+      CALL ETIME(ARRAY,TIME)
+CDME  CALL ETIME(ARRAY)
       T=ARRAY(2)
       IF (IFLAG .NE. 0) GO TO 30        
       ICPUSC = T + .49        

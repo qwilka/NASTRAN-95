@@ -1,5 +1,10 @@
       SUBROUTINE PEXIT
 C
+CDME  https://github.com/AeroDME/NASTRAN-95/
+CDME  This function collides with a GFORTRAN intrinsic, and needs
+CDME  to be declared.
+      EXTERNAL        LINK
+CDME
       INTEGER         HH,SS,DATE(3)
       COMMON /OUTPUT/ LE(17)
       COMMON /MACHIN/ MACH

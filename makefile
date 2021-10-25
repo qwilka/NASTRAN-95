@@ -35,9 +35,8 @@ AR=ar
 NASTRAN=./sbin/nastran.py
 LN=ln -s
 #
-FLAGS+=-g -fno-range-check -fno-automatic -std=legacy -Iinclude -Llib -Jobj
-#FLAGS+=-g -fno-range-check -fno-automatic -std=legacy -Jobj
-#FLAGS+=-g -ffixed-form -fno-range-check -fno-automatic -fallow-argument-mismatch -fallow-invalid-boz -fno-align-commons -Iinclude -Llib -Jobj 
+#FLAGS+=-g -fno-range-check -fno-automatic -std=legacy -Iinclude -Llib -Jobj
+FLAGS+=-g -ffixed-form -fno-range-check -fno-automatic -fallow-argument-mismatch -fallow-invalid-boz -fno-align-commons -Llib -Jobj 
 ################################################################################
 all:       nastran nasthelp nastplot chkfil ff jobs
 nastran:   obj bin libnas NASINFO bin/nastran.x
@@ -100,9 +99,11 @@ obj/%.o : mds/%.f
 	$(F77) $(FLAGS) -c $< -o $@
 obj/%.o : mis/%.f
 	$(F77) $(FLAGS) -c $< -o $@
-obj/%.o : src/%.f
-	$(F77) $(FLAGS) -c $< -o $@
-obj/%.o : src/%.f90
+#obj/%.o : src/%.f
+#	$(F77) $(FLAGS) -c $< -o $@
+#obj/%.o : src/%.f90
+#	$(F77) $(FLAGS) -c $< -o $@
+obj/%.o : um/nasthelp.f
 	$(F77) $(FLAGS) -c $< -o $@
 ################################################################################
 JOBS+=$(patsubst inp/%.inp,OUTPUT/%.f06,$(wildcard inp/*.inp))

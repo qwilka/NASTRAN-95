@@ -1,4 +1,17 @@
 
 bin/
 obj/
+lib/
+sbin/
+OUTPUT/
+
+COSDBCL
+COSDDAM
+COSDFVA
+COSHYD1
+COSHYD2
+COSMFVA
+NASINFO
+RSCARDS
+
 *.bakcrlf
