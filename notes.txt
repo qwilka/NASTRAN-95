@@ -6,7 +6,13 @@ https://github.com/ldallolio/NASTRAN-95
 https://www.mystran.com/forums/forumdisplay.php?fid=11  ComLab and NASTRAN-95
 https://discord.com/invite/NeZEBZn
 
+https://gcc.gnu.org/gcc-9/
+https://gcc.gnu.org/wiki/GFortran
+
 build notes:
+fix files with CRLF line endings
+
+
 
 https://github.com/AeroDME/NASTRAN-95/commit/07d552d5c293f79d662042198aefccf6ebd91a14
 
@@ -23,7 +29,16 @@ printf "Hii \r\n" | tee /tmp/test_folder/crlf_ending{1,2}
 printf "HIIII ii \n" | tee /tmp/test_folder/lf_ending{1,2}
 cat -A /tmp/test_folder/{crlf_ending1,lf_ending1}
 grep -rIl -m 1 $'\r' /tmp/test_folder/
+find /tmp/test_folder/ -type f -exec sed -i.bakcrlf 's/\r//' {} \;
+grep -rIl -m 1 $'\r' /tmp/test_folder/ | xargs sed -i.bakcrlf 's/\r//'
+
 
 sed 's/\r//' /tmp/test_folder/crlf_ending1 | cat -A -
 tr -d '\r' < /tmp/test_folder/crlf_ending1 | cat -A -
 awk 'gsub(/\r/,"")' /tmp/test_folder/crlf_ending1 | cat -A -
+
+grep -rIl --include \*.txt -m 1 $'\r' /home/develop/Projects/store/NASTRAN-95 | xargs sed -i.bakcrlf 's/\r//'
+grep -rIl --include \*.TXT -m 1 $'\r' /home/develop/Projects/store/NASTRAN-95 | xargs sed -i.bakcrlf 's/\r//'
+grep -rIl --include \*.inp --include \*.f -m 1 $'\r' /home/develop/Projects/store/NASTRAN-95 | xargs sed -i.bakcrlf 's/\r//'
+grep -rIl --include \*.COM -m 1 $'\r' /home/develop/Projects/store/NASTRAN-95 | xargs sed -i.bakcrlf 's/\r//'
+find ./ -name "*.bakcrlf" -exec ls -l {} \;
