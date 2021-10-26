@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">The NASTRAN user's manual</a></li>
+      after: |
+        <li><a href="https://github.com/nasa/NASTRAN-95"><b>NASTRAN-95</b> on GitHub</a></li>
+        <li><a href="https://github.com/qwilka/NASTRAN-95"><b>qwilka/NASTRAN-95</b> on GitHub</a></li>
+        <li><a href="https://qwilka.github.io/">Qwilka blog</a></li>
+    edit: https://github.com/qwilka/NASTRAN-95/edit/master/%s
+#    download: ["pdf"]
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: pdflatex
+  citation_package: natbib
+  keep_tex: no

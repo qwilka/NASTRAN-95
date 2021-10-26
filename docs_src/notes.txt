@@ -1,0 +1,24 @@
+https://bookdown.org/yihui/rmarkdown/  R Markdown: The Definitive Guide
+https://github.com/rstudio/rmarkdown-book
+
+
+
+rmarkdown::render_site(encoding = 'UTF-8')
+bookdown::render_book("index.Rmd", "bookdown::gitbook")
+
+Bibtex
+=======
+https://tex.stackexchange.com/questions/143/what-are-good-sites-to-find-citations-in-bibtex-format/233633#233633
+https://www.doi2bib.org/
+http://www.ottobib.com/
+bibtex-search -s google bai subsea engineering
+
+
+https://stackoverflow.com/questions/9710118/convert-multipage-pdf-to-png-and-back-linux
+https://askubuntu.com/questions/100994/convert-pdf-to-image
+
+gs -dNOPAUSE -dBATCH -sDEVICE=pngalpha -r300 -sOutputFile='UM-%03d.png' NASTRAN\ Users\ Manual\ 2.pdf 
+gs -dNOPAUSE -dBATCH -sDEVICE=pngalpha -r300 -sOutputFile='UM1-%03d.png' 19840013831.pdf
+
+https://ntrs.nasa.gov/citations/19840013831  The NASTRAN user's manual
+https://ntrs.nasa.gov/citations/19780021563  The NASTRAN User's Manual Level 16.0 and Supplement

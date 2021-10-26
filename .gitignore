@@ -5,6 +5,9 @@ lib/
 sbin/
 OUTPUT/
 
+docs/
+.Rhistory
+
 COSDBCL
 COSDDAM
 COSDFVA

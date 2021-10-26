@@ -2,6 +2,7 @@
 https://github.com/nasa/NASTRAN-95
 https://github.com/AeroDME/NASTRAN-95
 https://github.com/ldallolio/NASTRAN-95
+https://github.com/SteveDoyle2/NASTRAN-95
 
 https://www.mystran.com/forums/forumdisplay.php?fid=11  ComLab and NASTRAN-95
 https://discord.com/invite/NeZEBZn
@@ -58,3 +59,4 @@ grep -rIl --include \*.TXT -m 1 $'\r' /home/develop/Projects/store/NASTRAN-95 | 
 grep -rIl --include \*.inp --include \*.f -m 1 $'\r' /home/develop/Projects/store/NASTRAN-95 | xargs sed -i.bakcrlf 's/\r//'
 grep -rIl --include \*.COM -m 1 $'\r' /home/develop/Projects/store/NASTRAN-95 | xargs sed -i.bakcrlf 's/\r//'
 find ./ -name "*.bakcrlf" -exec ls -l {} \;
+find ./ -name "*.bakcrlf" -exec rm {} \;
