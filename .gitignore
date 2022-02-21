@@ -4,6 +4,7 @@ obj/
 lib/
 sbin/
 OUTPUT/
+docs_src/
 
 docs/
 .Rhistory
